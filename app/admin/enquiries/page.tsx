@@ -2,7 +2,7 @@
 
 export const dynamic = "force-dynamic";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import type { ContactEnquiry } from "@/types/database";
 import { Mail, MessageSquare, Phone, X } from "lucide-react";
@@ -21,7 +21,7 @@ const statusLabels: Record<string, string> = {
   resolved: "Resolved",
 };
 
-export default function AdminEnquiriesPage() {
+function AdminEnquiriesContent() {
   const searchParams = useSearchParams();
   const highlightId = searchParams.get("id");
 
@@ -172,5 +172,13 @@ export default function AdminEnquiriesPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function AdminEnquiriesPage() {
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center py-20 text-sm text-slate-400">Loading...</div>}>
+      <AdminEnquiriesContent />
+    </Suspense>
   );
 }
