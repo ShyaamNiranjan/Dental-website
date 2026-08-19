@@ -2,7 +2,7 @@
 
 export const dynamic = "force-dynamic";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import type { Appointment } from "@/types/database";
 import { formatDate, formatTime } from "@/lib/utils";
@@ -17,7 +17,7 @@ const statusColors: Record<string, string> = {
   cancelled: "bg-red-50 text-red-600 border-red-200",
 };
 
-export default function AdminAppointmentsPage() {
+function AdminAppointmentsContent() {
   const searchParams = useSearchParams();
   const highlightId = searchParams.get("id");
 
@@ -176,5 +176,13 @@ export default function AdminAppointmentsPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function AdminAppointmentsPage() {
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center py-20 text-sm text-slate-400">Loading...</div>}>
+      <AdminAppointmentsContent />
+    </Suspense>
   );
 }
