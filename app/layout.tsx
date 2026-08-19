@@ -12,16 +12,24 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Premium Dental Care in Mumbai`,
+    default: `${siteConfig.name} | Beverly Hills Dentist`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: [
+    "Beverly Hills dentist",
+    "cosmetic dentistry Beverly Hills",
+    "dental implants Los Angeles",
+    "Invisalign Beverly Hills",
+    "teeth whitening Beverly Hills",
+    "best dentist 90210",
+  ],
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    locale: "en_IN",
+    locale: "en_US",
     type: "website",
   },
   robots: {

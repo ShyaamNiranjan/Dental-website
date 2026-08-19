@@ -10,6 +10,8 @@ export function localBusinessSchema() {
     telephone: siteConfig.phone,
     email: siteConfig.email,
     image: `${siteConfig.url}/opengraph-image`,
+    priceRange: "$$$",
+    medicalSpecialty: "Dentistry",
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.street,
@@ -22,17 +24,32 @@ export function localBusinessSchema() {
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "19:00",
+        opens: "08:00",
+        closes: "18:00",
       },
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: "Saturday",
         opens: "09:00",
-        closes: "15:00",
+        closes: "14:00",
       },
     ],
-    priceRange: "$$",
-    medicalSpecialty: "Dentistry",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 34.0736,
+      longitude: -118.4004,
+    },
+    areaServed: [
+      "Beverly Hills, CA",
+      "West Hollywood, CA",
+      "Bel Air, CA",
+      "Century City, CA",
+      "Santa Monica, CA",
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "127",
+    },
   };
 }

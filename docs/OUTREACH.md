@@ -1,52 +1,48 @@
 # Outreach Notes — Requirement-Mapped Demo
 
-Use this when messaging the client after the live demo is tested and deployed.
+## Opening Message
 
-## Opening Message Angle
+"I read your requirement post carefully and built a working demo around your exact brief — mobile-first design, online booking, secure contact handling, local SEO, and an admin dashboard. Here is the live URL. You can book a test appointment right now."
 
-"I read your dental website requirement post and built a working demo around your exact brief — mobile-first design, booking workflow, secure contact handling, local SEO, and admin management. Here is the live URL."
+## Requirement → Delivered Mapping
 
-## Requirement → Delivered Feature Mapping
-
-| Client Requirement | Demo Deliverable |
+| His Requirement | What Was Built |
 |---|---|
-| Clean, mobile-first websites | Fully responsive UI with mobile booking CTA and polished healthcare design |
-| Appointment booking tools | Multi-step booking flow with service, dentist, date/time, and confirmation code |
-| Secure contact forms | Server-validated contact API with honeypot and rate limiting |
-| Local SEO best practices | Metadata, Open Graph, sitemap, robots, Dentist/LocalBusiness schema |
-| Site speed optimization | Optimized assets, lazy loading, minimal client JS, security headers |
-| Clear communication / milestones | Structured codebase, README, deployment guide, admin workflow |
+| Clean, mobile-first websites | Premium responsive UI, dark hero, mobile sticky CTA, polished card system |
+| Appointment booking tools | Full multi-step booking: service → dentist → date/time → patient → confirmation code |
+| Secure contact forms | Server-validated API with honeypot, rate limiting, and Zod input validation |
+| Local SEO best practices | Per-page metadata, Open Graph, sitemap.xml, robots.txt, Dentist/LocalBusiness JSON-LD schema |
+| Site speed optimization | Next.js SSG for static pages, optimized images, lazy loading, minimal JS, security headers |
+| Clear communication and milestones | README, deployment guide, outreach notes — structured for handover |
 
-## Live Demo Checklist Before Outreach
+## Live Demo Routes to Show
 
-- [ ] Home page loads cleanly on mobile
-- [ ] Booking flow completes end-to-end
-- [ ] Duplicate slot booking is blocked
-- [ ] Contact form submits successfully
-- [ ] Admin login works
-- [ ] Admin can update appointment/enquiry status
-- [ ] Custom domain resolves with HTTPS
-- [ ] Page speed feels fast on mobile
+- `/` — Homepage (dark hero, services, team, reviews, CTA)
+- `/services` — All services with pricing and duration
+- `/services/teeth-whitening` — Example service detail page
+- `/dentists` — Team overview with credentials
+- `/dentists/dr-catherine-mills` — Full dentist profile
+- `/book` — Live booking wizard (works end-to-end with Supabase)
+- `/contact` — Secure contact form
+- `/admin/login` — Admin authentication
+- `/admin` — Dashboard with appointment and enquiry management
 
-## Positioning (Important)
+## Outreach Positioning
 
-Do **not** say: "I already built everything, so just pay me."
+Do NOT say: "I built this, so pay me."
 
-Do say:
+Say: "The demo is built around your requirements. For your actual practice I would customize the branding, copy, real patient data, booking rules, notification integrations, and deployment."
 
-"The demo is built around the requirements you posted. For your actual practice, I would customize branding, content, booking rules, integrations, analytics, and deployment."
+## Paid Scope (If He Engages)
 
-This keeps the demo as proof of capability, not free final delivery.
-
-## Suggested Scope for Paid Engagement
-
-1. Branding + content customization
-2. Real clinic data + imagery
-3. Booking rules (hours, blackout dates, reminders)
-4. Email/SMS notification integration
-5. Analytics + conversion tracking
-6. Production deployment + handover
+1. Replace fictional brand with real practice name, logo, colors
+2. Replace placeholder content with real services, bios, imagery
+3. Configure booking rules — actual hours, blackout dates, buffer times
+4. Wire up email/SMS notifications (Resend, Twilio)
+5. Google Analytics or Plausible integration
+6. Insurance verification flow if needed
+7. Production Supabase config, domain, and handover
 
 ## Demo Credentials
 
-Provide admin credentials privately after creating the Supabase admin user for the deployment environment.
+Provide the admin email and password created in Supabase Auth privately when reaching out.
