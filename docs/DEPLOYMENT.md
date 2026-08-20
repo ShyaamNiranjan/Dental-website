@@ -22,7 +22,7 @@ This app is a Next.js project and should be deployed on **Vercel** (not GitHub P
 4. Add environment variables:
 
 ```
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_SITE_URL=https://dentaldemo.yniidi.com
 NEXT_PUBLIC_SUPABASE_URL=...
 NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 SUPABASE_SERVICE_ROLE_KEY=...
@@ -44,7 +44,7 @@ Value: cname.vercel-dns.com
 ```
 
 4. Wait for SSL to provision (usually a few minutes)
-5. Update `NEXT_PUBLIC_SITE_URL` to `https://dental.yniidi.com`
+5. Update `NEXT_PUBLIC_SITE_URL` to `https://dentaldemo.yniidi.com`
 6. Redeploy
 
 ## 4. Post-Deploy Smoke Test

@@ -1,9 +1,29 @@
+const PRODUCTION_SITE_URL = "https://dentaldemo.yniidi.com";
+
+function resolveSiteUrl() {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+
+  if (fromEnv?.includes("localhost") || fromEnv?.startsWith("http://127.0.0.1")) {
+    return fromEnv;
+  }
+
+  if (fromEnv && !fromEnv.includes("vercel.app")) {
+    return fromEnv;
+  }
+
+  if (process.env.NODE_ENV === "development") {
+    return "http://localhost:3000";
+  }
+
+  return PRODUCTION_SITE_URL;
+}
+
 export const siteConfig = {
   name: "Prestige Dental Beverly Hills",
   tagline: "Exceptional dental care for those who expect more",
   description:
     "Beverly Hills' premier dental practice offering cosmetic, restorative, and preventive care. Online booking, same-week availability, and a patient experience built around comfort and clarity.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: resolveSiteUrl(),
   phone: "(424) 555-0147",
   phoneHref: "tel:+14245550147",
   email: "hello@prestigedental.com",
