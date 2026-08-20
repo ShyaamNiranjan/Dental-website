@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { dentists } from "@/lib/constants/site";
+import { dentists, siteConfig } from "@/lib/constants/site";
 import { Section } from "@/components/ui/section";
 import { ArrowLeft, CalendarDays, GraduationCap } from "lucide-react";
 
@@ -111,8 +111,8 @@ export default async function DentistDetailPage({ params }: Props) {
               </Link>
               <p className="mt-4 text-center text-xs text-slate-500">
                 Or call{" "}
-                <a href="tel:(310) 555-0192" className="font-medium text-teal-800">
-                  (310) 555-0192
+                <a href={siteConfig.phoneHref} className="font-medium text-teal-800">
+                  {siteConfig.phone}
                 </a>
               </p>
             </div>

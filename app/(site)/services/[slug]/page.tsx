@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { services } from "@/lib/constants/site";
+import { services, siteConfig } from "@/lib/constants/site";
 import { Section } from "@/components/ui/section";
 import { CheckCircle2, Clock, ArrowLeft, CalendarDays } from "lucide-react";
 
@@ -91,10 +91,10 @@ export default async function ServiceDetailPage({ params }: Props) {
               <p className="mt-5 text-center text-xs text-slate-500">
                 Questions first? Call us at{" "}
                 <a
-                  href="tel:(310) 555-0192"
+                  href={siteConfig.phoneHref}
                   className="font-medium text-teal-800"
                 >
-                  (310) 555-0192
+                  {siteConfig.phone}
                 </a>
               </p>
             </div>

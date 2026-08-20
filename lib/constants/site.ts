@@ -4,7 +4,8 @@ export const siteConfig = {
   description:
     "Beverly Hills' premier dental practice offering cosmetic, restorative, and preventive care. Online booking, same-week availability, and a patient experience built around comfort and clarity.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  phone: "(310) 555-0192",
+  phone: "(424) 555-0147",
+  phoneHref: "tel:+14245550147",
   email: "hello@prestigedental.com",
   address: {
     street: "9401 Wilshire Boulevard, Suite 820",

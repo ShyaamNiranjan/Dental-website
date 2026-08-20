@@ -82,7 +82,7 @@ export default function AboutPage() {
               <p className="font-semibold">{siteConfig.name}</p>
               <p>{siteConfig.address.street}</p>
               <p>{siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.postalCode}</p>
-              <p><a href={`tel:${siteConfig.phone}`} className="text-teal-800 font-medium">{siteConfig.phone}</a></p>
+              <p><a href={siteConfig.phoneHref} className="text-teal-800 font-medium">{siteConfig.phone}</a></p>
             </address>
             <div className="pt-2">
               {siteConfig.hours.map((item) => (

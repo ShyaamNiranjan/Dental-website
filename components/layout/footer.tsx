@@ -53,7 +53,7 @@ export function Footer() {
               {siteConfig.address.postalCode}
             </p>
             <p>
-              <a href={`tel:${siteConfig.phone}`} className="transition hover:text-white">
+              <a href={siteConfig.phoneHref} className="transition hover:text-white">
                 {siteConfig.phone}
               </a>
             </p>

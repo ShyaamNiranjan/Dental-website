@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const phoneRegex = /^(\+91[\s-]?)?[6-9]\d{9}$/;
+const phoneRegex = /^(?:\+1[\s.-]?)?(?:\(?[2-9]\d{2}\)?[\s.-]?)\d{3}[\s.-]?\d{4}$/;
 
 export const appointmentSchema = z.object({
   serviceSlug: z.string().min(1),
@@ -14,7 +14,7 @@ export const appointmentSchema = z.object({
   patientPhone: z
     .string()
     .trim()
-    .regex(phoneRegex, "Enter a valid Indian mobile number"),
+    .regex(phoneRegex, "Enter a valid US phone number"),
   notes: z.string().trim().max(500).optional(),
   website: z.string().max(0).optional(),
 });
@@ -25,7 +25,7 @@ export const contactSchema = z.object({
   phone: z
     .string()
     .trim()
-    .regex(phoneRegex, "Enter a valid Indian mobile number")
+    .regex(phoneRegex, "Enter a valid US phone number")
     .optional()
     .or(z.literal("")),
   message: z.string().trim().min(10).max(2000),

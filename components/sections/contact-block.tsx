@@ -28,7 +28,7 @@ export function ContactBlock() {
             <div>
               <p className="font-semibold text-slate-900">Phone</p>
               <a
-                href={`tel:${siteConfig.phone}`}
+                href={siteConfig.phoneHref}
                 className="mt-1 text-sm font-medium text-teal-800"
               >
                 {siteConfig.phone}

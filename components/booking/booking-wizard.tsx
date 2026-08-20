@@ -305,6 +305,7 @@ export function BookingWizard() {
               <Input
                 id="patientPhone"
                 type="tel"
+                placeholder="(424) 555-0147"
                 value={form.patientPhone}
                 onChange={(event) =>
                   setForm((current) => ({ ...current, patientPhone: event.target.value }))
