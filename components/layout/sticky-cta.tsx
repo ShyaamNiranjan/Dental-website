@@ -3,14 +3,12 @@ import { CalendarDays } from "lucide-react";
 
 export function StickyCTA() {
   return (
-    <div className="fixed inset-x-4 bottom-4 z-40 md:hidden">
-      <Link
-        href="/book"
-        className="flex items-center justify-center gap-2 rounded-full bg-slate-950 px-5 py-4 text-sm font-semibold text-white shadow-lg shadow-slate-900/30"
-      >
-        <CalendarDays className="h-4 w-4" aria-hidden="true" />
-        Book an Appointment
-      </Link>
-    </div>
+    <Link
+      href="/book"
+      aria-label="Book an appointment"
+      className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-slate-950 text-white shadow-lg shadow-slate-900/25 transition hover:bg-slate-800 hover:scale-105 active:scale-95 md:hidden"
+    >
+      <CalendarDays className="h-6 w-6" aria-hidden="true" />
+    </Link>
   );
 }

@@ -12,7 +12,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         Skip to content
       </a>
       <Header />
-      <main id="main-content" className="flex-1 pb-24 md:pb-0">
+      <main id="main-content" className="flex-1">
         {children}
       </main>
       <Footer />
